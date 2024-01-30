@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #inventoryTable {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #inventoryTable th, #inventoryTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #inventoryForm {
+            margin-bottom: 20px;
+        }
+        #historyList li {
+    margin-bottom: 5px;
+    color: #555;
+}
+    </style>
+</head>
+<body>
+    <h1>Inventory Management System</h1>
+
+    <form id="inventoryForm">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" min="1"  id="quantity" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <button type="button" onclick="addItem()">Add Item</button>
+    </form>
+
+    <table id="inventoryTable">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Inventory items will be added here dynamically -->
+        </tbody>
+    </table>
+    
+    <div id="history">
+        <h2>History</h2>
+        <ul id="historyList"></ul>
+    </div>
+    <!-- <form id="editForm">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <button type="button" onclick="editItem()">Add Item</button>
+    </form> -->
+    <script src="script.js"></script>
+</body>
+</html>

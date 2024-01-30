@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #calculator {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 1.5em;
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    button.operator {
+      background-color: #f0ad4e;
+    }
+
+    button.equal {
+      background-color: #5bc0de;
+    }
+
+    button.clear, button.reset {
+      background-color: #d9534f;
+    }
+  </style>
+  <title>Calculator</title>
+</head>
+<body>
+
+<div id="calculator">
+  <input type="text" id="display" disabled>
+  <div>
+    <button onclick="appendToDisplay('7')">7</button>
+    <button onclick="appendToDisplay('8')">8</button>
+    <button onclick="appendToDisplay('9')">9</button>
+    <button class="operator" onclick="appendToDisplay('/')">/</button>
+  </div>
+  <div>
+    <button onclick="appendToDisplay('4')">4</button>
+    <button onclick="appendToDisplay('5')">5</button>
+    <button onclick="appendToDisplay('6')">6</button>
+    <button class="operator" onclick="appendToDisplay('*')">*</button>
+  </div>
+  <div>
+    <button onclick="appendToDisplay('1')">1</button>
+    <button onclick="appendToDisplay('2')">2</button>
+    <button onclick="appendToDisplay('3')">3</button>
+    <button class="operator" onclick="appendToDisplay('-')">-</button>
+  </div>
+  <div>
+    <button onclick="appendToDisplay('0')">0</button>
+    <button onclick="appendToDisplay('.')">.</button>
+    <button class="equal" onclick="calculate()">=</button>
+    <button class="operator" onclick="appendToDisplay('+')">+</button>
+  </div>
+  <div>
+    <button class="clear" onclick="clearLast()">C</button>
+    <button class="reset" onclick="reset()">AC</button>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
